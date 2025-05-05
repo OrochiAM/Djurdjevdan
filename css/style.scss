@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Jacquarda Bastarda 9';
+}
+
+*::selection {
+  background-color: #f2c15f;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffecd2;
+  height: 100vh;
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  margin-bottom: 30vh;
+
+  img {
+    width: 200px;
+    user-select: none;
+  }
+
+  h1 {
+    font-size: 40px;
+    margin-bottom: 35px;
+  }
+
+  h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+    border-bottom: solid 4px #f2c15f;
+    background-color: #fff;
+    padding: 5px 10px;
+  }
+
+  .dugme {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #fff;
+      border: none;
+      position: absolute;
+      height: 90%;
+      width: 90%;
+      font-size: 25px;
+      color: #f2c15f;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+  }
+
+  .dugme:hover button {
+    background-color: #f2c15f;
+    color: #fff;
+  }
+
+  .dugme:active button {
+    background-color: #eea755;
+    color: #fff;
+  }
+}
+
+.cestitka {
+  position: absolute;
+  font-size: 80px;
+  z-index: 2;
+  color: #fff;
+  bottom: -90px;
+}
+
+.pevac {
+  position: absolute;
+  height: 60vh;
+  bottom: -60vh;
+  z-index: 0;
+}
+
+.praseL,
+.praseR {
+  position: absolute;
+  height: 65vh;
+  bottom: calc(-65vh - 100px);
+  z-index: 0;
+}
+
+.praseR {
+  right: 25%;
+}
+
+.praseL {
+  left: 25%;
+  transform: scaleX(-1);
+}
+
+.zid {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.lavL,
+.lavR {
+  position: absolute;
+  bottom: 0;
+  height: 60vh;
+}
+
+.lavL {
+  left: 20%;
+}
+
+.lavR {
+  right: 20%;
+  transform: scaleX(-1);
+}
+
+.zavesaL,
+.zavesaR {
+  position: absolute;
+  height: 100vh;
+}
+
+.zavesaL {
+  left: 0;
+  top: 0;
+}
+
+.zavesaR {
+  right: 0;
+  top: 0;
+  transform: scaleX(-1);
+}
+
+.trubaciL,
+.trubaciR {
+  position: absolute;
+  height: 40vh;
+  bottom: -100vh;
+}
+
+.trubaciL {
+  left: 20px;
+  z-index: 1;
+}
+
+.trubaciR {
+  right: 20px;
+  z-index: 1;
+  transform: scaleX(-1);
+}
