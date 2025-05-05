@@ -31,7 +31,7 @@ trubaciJiggleTl
 let audioDJ = new Audio('audio/djurdjevdan.mp3');
 
 const isDjurdjevdanHandle = (djurdjevdan) => {
-  if (djurdjevdan) {
+  if (djurdjevdan.includes(true)) {
     textProvere.innerHTML = 'Da, Jeste!!';
     trubaciPojaviTl.play();
     trubaciJiggleTl.play();
@@ -44,5 +44,9 @@ const isDjurdjevdanHandle = (djurdjevdan) => {
 };
 
 dugmeProvere.addEventListener('click', () => {
-  isDjurdjevdanHandle(isToday(new Date('2025-5-6')));
+  isDjurdjevdanHandle([
+    isToday(new Date('2025-5-6')),
+    isToday(new Date('2025-5-7')),
+    isToday(new Date('2025-5-8')),
+  ]);
 });
