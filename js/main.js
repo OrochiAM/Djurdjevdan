@@ -51,3 +51,5 @@ dugmeProvere.addEventListener('click', () => {
     isToday(new Date('2025-5-12')),
   ]);
 });
+
+let lav;
