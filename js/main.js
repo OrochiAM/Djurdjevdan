@@ -51,4 +51,4 @@ dugmeProvere.addEventListener('click', () => {
   ]);
 });
 
-let lav;
+let lav = document.querySelector('.lavL');
