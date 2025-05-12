@@ -48,6 +48,6 @@ dugmeProvere.addEventListener('click', () => {
     isToday(new Date('2025-5-6')),
     isToday(new Date('2025-5-7')),
     isToday(new Date('2025-5-8')),
-    isToday(new Date('2025-5-8')),
+    isToday(new Date('2025-5-12')),
   ]);
 });
