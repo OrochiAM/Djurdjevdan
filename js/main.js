@@ -1,20 +1,18 @@
-function isToday(date) {
+function isTodayDjurdjevdan(date) {
   const now = new Date();
 
-  console.log(date.getMonth());
   return (
-    date.getDate() === now.getDate() &&
-    date.getMonth() === now.getMonth() &&
-    date.getFullYear() === now.getFullYear()
+    (now.getDate() == 6 && now.getMonth() == 4) ||
+    (now.getDate() == 7 && now.getMonth() == 4) ||
+    (now.getDate() == 8 && now.getMonth() == 4)
   );
 }
 
 const dugmeProvere = document.querySelector('button');
 const textProvere = document.querySelector('h2');
 
-const trubaciPojaviTl = gsap.timeline();
+const trubaciPojaviTl = gsap.timeline({ paused: true });
 
-trubaciPojaviTl.pause();
 trubaciPojaviTl
   .to('.trubaci', { bottom: 0, duration: 3 })
   .to('.prase', { bottom: -70, duration: 3 }, '<')
@@ -28,27 +26,22 @@ trubaciJiggleTl
   .to('.trubaciJ', { x: '-=30', y: '-=30' })
   .to('.trubaciJ', { x: '-=30', y: '+=30' })
   .to('.trubaciJ', { x: '+=30', y: '-=30' });
+
 let audioDJ = new Audio('audio/djurdjevdan.mp3');
+let wompwomp = new Audio('audio/wompwomp.mp3');
 
 const isDjurdjevdanHandle = (djurdjevdan) => {
-  if (djurdjevdan.includes(true)) {
+  if (isTodayDjurdjevdan()) {
     textProvere.innerHTML = 'Da, Jeste!!';
     trubaciPojaviTl.play();
     trubaciJiggleTl.play();
     audioDJ.play();
   } else {
     textProvere.innerHTML = 'Ne, Nije!!!';
-    let audio = new Audio('audio/wompwomp.mp3');
-    audio.play();
+    wompwomp.play();
   }
 };
 
-dugmeProvere.addEventListener('click', () => {
-  isDjurdjevdanHandle([
-    isToday(new Date('2025-5-6')),
-    isToday(new Date('2025-5-7')),
-    isToday(new Date('2025-5-8')),
-  ]);
-});
+dugmeProvere.addEventListener('click', isDjurdjevdanHandle);
 
 let lav = document.querySelector('.lavL');
