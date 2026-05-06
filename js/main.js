@@ -8,6 +8,18 @@ function isTodayDjurdjevdan(date) {
   );
 }
 
+const prasici = document.querySelectorAll('.prase');
+
+function handlePost() {
+  const year = new Date().getFullYear();
+  const danDjurdjevdan = new Date(`${year}-05-06`).getDay();
+
+  if (danDjurdjevdan == 3 || danDjurdjevdan == 5) {
+    prasici[0].src = 'images/riba.png';
+    prasici[1].src = 'images/riba.png';
+  }
+}
+
 const dugmeProvere = document.querySelector('button');
 const textProvere = document.querySelector('h2');
 
@@ -33,8 +45,12 @@ let wompwomp = new Audio('audio/wompwomp.mp3');
 const isDjurdjevdanHandle = (djurdjevdan) => {
   if (isTodayDjurdjevdan()) {
     textProvere.innerHTML = 'Da, Jeste!!';
+
+    handlePost();
+
     trubaciPojaviTl.play();
     trubaciJiggleTl.play();
+
     audioDJ.play();
   } else {
     textProvere.innerHTML = 'Ne, Nije!!!';
